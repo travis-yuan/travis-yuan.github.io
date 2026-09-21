@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://travis-yuan.github.io/sitemap.xml
