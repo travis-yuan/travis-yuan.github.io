@@ -192,7 +192,7 @@ const PUBLICATIONS = [
 }`
   },
   {
-    id: 'wang2022measuring', year: 2022, type: 'journal', selected: false,
+    id: 'wang2022measuring', year: 2022, type: 'journal', selected: true,
     authors: [['Wang, Bingcheng', false], ['Rau, Pei-Luen Patrick', false], ['Yuan, Tianyi', true]],
     title: 'Measuring user competence in using artificial intelligence: validity and reliability of artificial intelligence literacy scale',
     venue: 'Behaviour & Information Technology',
@@ -380,15 +380,6 @@ const EXPERIENCE = [
 /* ---------------- News data ---------------- */
 const NEWS = [
   {
-    sort: '2026-07-01',
-    date: { en: 'Jul 2026', zh: '2026年7月' },
-    title: { en: 'Presented at HCII 2026', zh: '在 HCII 2026 大会作报告' },
-    text: {
-      en: 'Presented "From Passive Observers to Potential Assets: Reconceptualizing Lurking and Its Factors in Blended Spaces" at the 2026 HCI International Conference (Cross-Cultural Design track).',
-      zh: '在 2026 年 HCI International 大会（Cross-Cultural Design 分会）报告论文 "From Passive Observers to Potential Assets: Reconceptualizing Lurking and Its Factors in Blended Spaces"。'
-    }
-  },
-  {
     sort: '2026-06-01',
     date: { en: '2026', zh: '2026年' },
     title: { en: 'Paper published in Journal of Neural Engineering', zh: '论文发表于 Journal of Neural Engineering' },
@@ -406,33 +397,6 @@ const NEWS = [
       zh: '论文 "XAI in the human-agent-environment loop: How do task, explanation strategy, and AI literacy shape user engagement?" 被 International Journal of Human-Computer Studies 录用。'
     }
   },
-  {
-    sort: '2025-09-01',
-    date: { en: 'Sep 2025', zh: '2025年9月' },
-    title: { en: 'Summer internship at Huawei UX (Human Factors) team', zh: '完成华为 UX（人因）团队暑期实习' },
-    text: {
-      en: 'Completed a research internship with Huawei\'s Consumer BG UX team, working on human-centered evaluation of AI systems. (Description kept intentionally brief; project details remain confidential.)',
-      zh: '完成华为终端BG UX团队（人因部门）研究实习，方向为以人为中心的 AI 系统评估（描述从简，项目细节保密）。'
-    }
-  },
-  {
-    sort: '2025-07-01',
-    date: { en: 'Jul 2025', zh: '2025年7月' },
-    title: { en: 'Presented at HCII 2025', zh: '在 HCII 2025 大会作报告' },
-    text: {
-      en: 'Presented "Cultural Intelligence and Its Influencing Factors in the Chinese Context" at the 2025 HCI International Conference.',
-      zh: '在 2025 年 HCI International 大会报告论文 "Cultural Intelligence and Its Influencing Factors in the Chinese Context"。'
-    }
-  },
-  {
-    sort: '2024-07-01',
-    date: { en: 'Jul 2024', zh: '2024年7月' },
-    title: { en: 'Presented at HCII 2024', zh: '在 HCII 2024 大会作报告' },
-    text: {
-      en: 'Presented "The Impact of Color-Touch Cross-Modal Correspondence on the Temporal Integration of Multimodal Information" at the 2024 HCI International Conference.',
-      zh: '在 2024 年 HCI International 大会报告论文 "The Impact of Color-Touch Cross-Modal Correspondence on the Temporal Integration of Multimodal Information"。'
-    }
-  }
 ];
 
 /* ---------------- State ---------------- */
@@ -514,6 +478,7 @@ function renderPubs() {
 
 function renderExperience() {
   const root = document.getElementById('expRoot');
+  if (!root) return;
   root.innerHTML = EXPERIENCE.map((e) => `
     <div class="exp-card">
       <div class="exp-head">
