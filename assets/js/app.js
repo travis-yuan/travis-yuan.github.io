@@ -112,7 +112,7 @@ const I18N = {
     pubsNote: '点击标题打开出版社页面（DOI）；点“引用”查看/复制 BibTeX 条目。★ = 代表作。',
     expTitle: '经历',
     expNote: '描述有意从简，项目细节按协议保密。',
-    collabTitle: '产业合作',
+    collabTitle: '产学研合作',
     newsTitle: '动态',
     contactTitle: '联系方式',
     contactEmailTitle: '邮箱',
