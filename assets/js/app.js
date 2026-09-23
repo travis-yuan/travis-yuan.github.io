@@ -14,6 +14,7 @@ const I18N = {
     navEducation: 'Education',
     navPublications: 'Publications',
     navExperience: 'Experience',
+    navCollab: 'Collaborations',
     navNews: 'News',
     navContact: 'Contact',
     heroTitle: 'Ph.D. Candidate in Human Factors & Human–Computer Interaction',
@@ -42,6 +43,7 @@ const I18N = {
     pubsNote: 'Click a title to open the publisher page (DOI). Use "Cite" to show/copy the BibTeX entry. ★ = selected representative work.',
     expTitle: 'Experience',
     expNote: 'Descriptions are intentionally brief; project details remain confidential per agreements.',
+    collabTitle: 'Industry Collaborations',
     newsTitle: 'News',
     contactTitle: 'Contact',
     contactEmailTitle: 'Email',
@@ -81,6 +83,7 @@ const I18N = {
     navEducation: '教育',
     navPublications: '论文',
     navExperience: '经历',
+    navCollab: '合作',
     navNews: '动态',
     navContact: '联系',
     heroTitle: '人因工程与人机交互方向博士研究生',
@@ -109,6 +112,7 @@ const I18N = {
     pubsNote: '点击标题打开出版社页面（DOI）；点“引用”查看/复制 BibTeX 条目。★ = 代表作。',
     expTitle: '经历',
     expNote: '描述有意从简，项目细节按协议保密。',
+    collabTitle: '产业合作',
     newsTitle: '动态',
     contactTitle: '联系方式',
     contactEmailTitle: '邮箱',
@@ -401,6 +405,60 @@ const EXPERIENCE = [
   }
 ];
 
+/* ---------------- Industry collaborations data ---------------- */
+const COLLABORATIONS = [
+  {
+    org: { en: 'Huawei', zh: '华为' },
+    title: { en: 'Human Factors Research on Intelligence-Grading Model', zh: '智能等级模型人因研究' },
+    role: { en: 'Project Lead', zh: '项目负责人' },
+    period: { en: '2025.10 – 2026.10', zh: '2025.10 – 2026.10' },
+    bullets: [
+      { en: 'Built a grading framework and a user-perceived intelligence-grading model for terminal systems from a human-factors perspective, validated through literature review (70+ papers), expert interviews, and multi-stage experiments (70+ participants).', zh: '从人因研究视角构建智能终端系统智能等级的分级框架与用户感知智能等级评估模型，通过文献调研（70+ 篇）、专家访谈、多阶段实验（70+ 人次）与案例验证完成量化验证。' },
+      { en: 'As project lead, oversaw surveys, experimental design and execution, data analysis, and staged deliverables.', zh: '作为项目负责人统筹调研、实验设计执行、数据分析与各阶段交付。' }
+    ]
+  },
+  {
+    org: { en: 'Huawei', zh: '华为' },
+    title: { en: 'User Experience Evaluation of Glasses-Free 3D Display', zh: '裸眼3D屏幕用户体验测试' },
+    role: { en: 'Project Lead', zh: '项目负责人' },
+    period: { en: '2022.06 – 2023.06', zh: '2022.06 – 2023.06' },
+    bullets: [
+      { en: 'Designed experiments on how depth cues, viewing position, and image features affect user experience of glasses-free 3D displays.', zh: '围绕景深、观看位置与图像特征设计实验，评估其对裸眼3D屏幕用户体验的影响。' },
+      { en: 'Led the team through experimental design, execution, data analysis, and reporting.', zh: '组织团队完成实验设计、实验执行、数据分析和报告撰写。' }
+    ]
+  },
+  {
+    org: { en: 'Honor (Huawei)', zh: '荣耀（华为）' },
+    title: { en: 'UI Animation Fluency Research', zh: '动效流畅性研究' },
+    role: { en: 'Project Lead', zh: '项目负责人' },
+    period: { en: '2021.01 – 2022.03', zh: '2021.01 – 2022.03' },
+    bullets: [
+      { en: 'Benchmarked UI design guidelines, color, and motion systems across Android/iOS and competing brands; authored an industry report on UI motion trends.', zh: '对标调研安卓/iOS 等主流手机 UI 设计规范、色彩与动效体系，撰写 UI 动效行业发展报告。' },
+      { en: 'Designed questionnaires based on prototype-library schemes, collected 500+ responses, and ran 64-participant experiments on motion curves and scenario fit.', zh: '基于原型库设计方案设计问卷，收集 500+ 份回复并完成 64 人次用户实验（动效曲线、场景匹配性等变量）。' },
+      { en: 'Designed dozens of animation schemes and application scenarios, built a motion database, and led the team in proposal writing, reporting, and client presentations.', zh: '为荣耀设计数十种动效方案与适配场景，建立动效数据库，带领组员完成立项书、实验报告与汇报展示。' }
+    ]
+  },
+  {
+    org: { en: 'China State Railway Group', zh: '中国国家铁路集团' },
+    title: { en: 'Wayfinding System Redesign for Hangzhou West Railway Station', zh: '杭州西站导视系统设计重构' },
+    role: { en: 'Project Member', zh: '项目组成员' },
+    period: { en: '2020.09 – 2021.04', zh: '2020.09 – 2021.04' },
+    bullets: [
+      { en: 'Visited ~10 high-speed railway stations across China to benchmark lighting, wayfinding, business models, and TOD development; simulated passenger flows with AnyLogic.', zh: '走访国内近十个高铁站，梳理室内照度、导视、商业模式与 TOD 建设痛点，并用 AnyLogic 对人流线路进行模拟仿真。' },
+      { en: 'Authored design specifications and consulting reports, redesigned wayfinding information architecture, and coordinated iteratively with the client team.', zh: '独立撰写设计规范与咨询方案报告，完成导视系统视觉信息梳理与可视化设计，与国铁团队多轮对接需求。' }
+    ]
+  },
+  {
+    org: { en: 'Venucia (Dongfeng)', zh: '东风启辰' },
+    title: { en: 'In-Vehicle Infotainment System Evaluation', zh: '车载中控交互系统测试与评估' },
+    role: { en: 'Project Member', zh: '项目组成员' },
+    period: { en: '2019.10 – 2020.03', zh: '2019.10 – 2020.03' },
+    bullets: [
+      { en: 'Benchmarked infotainment systems of Tesla, NIO, XPeng, etc. and built a UX capability evaluation framework.', zh: '调研特斯拉、蔚来、小鹏等交互系统发展历程，建立用户交互工作建设评价体系。' },
+      { en: 'Developed qualitative/quantitative evaluation protocols for in-vehicle systems, trained client staff, and designed/facilitated enterprise workshops.', zh: '制定中控系统定性+定量评测方案，辅助企业员工掌握测评系统；设计并主持企业工作坊培训。' }
+    ]
+  }
+];
 /* ---------------- News data ---------------- */
 const NEWS = [
   {
@@ -519,6 +577,24 @@ function renderExperience() {
     </div>`).join('');
 }
 
+function renderCollaborations() {
+  const root = document.getElementById('collabRoot');
+  if (!root) return;
+  root.innerHTML = COLLABORATIONS.map((c) => `
+    <div class="exp-card">
+      <div class="exp-head">
+        <div>
+          <span class="exp-org">${c.org[currentLang]}</span>
+          <div class="collab-title">${c.title[currentLang]}</div>
+          <div class="collab-role">${c.role[currentLang]}</div>
+        </div>
+        <span class="exp-period">${c.period[currentLang]}</span>
+      </div>
+      <ul class="exp-bullets">
+        ${c.bullets.map((b) => `<li>${b[currentLang]}</li>`).join('')}
+      </ul>
+    </div>`).join('');
+}
 function renderNews() {
   const root = document.getElementById('newsRoot');
   const items = NEWS.slice().sort((a, b) => b.sort.localeCompare(a.sort));
@@ -549,6 +625,7 @@ function applyLang(lang) {
 
   renderPubs();
   renderExperience();
+  renderCollaborations();
   renderNews();
   document.dispatchEvent(new CustomEvent('langchange', { detail: lang }));
 
