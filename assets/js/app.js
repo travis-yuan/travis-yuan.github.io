@@ -210,7 +210,7 @@ const PUBLICATIONS = [
 }`
   },
   {
-    id: 'xu2021hulamove', year: 2021, type: 'conference', selected: true, ccf: true,
+    id: 'xu2021hulamove', year: 2021, type: 'conference', selected: false, ccf: true,
     authors: [
       ['Xu, Xuhai', false], ['Li, Jiahao', false], ['Yuan, Tianyi', true], ['He, Liang', false],
       ['Liu, Xin', false], ['Yan, Yukang', false], ['Wang, Yuntao', false], ['Shi, Yuanchun', false],
@@ -266,7 +266,7 @@ const PUBLICATIONS = [
 }`
   },
   {
-    id: 'yuan2024impact', year: 2024, type: 'conference', selected: false,
+    id: 'yuan2024impact', year: 2024, type: 'conference', selected: true,
     authors: [['Yuan, Tianyi', true], ['Rau, Pei-Luen Patrick', false]],
     title: 'The Impact of Color-Touch Cross-Modal Correspondence on the Temporal Integration of Multimodal Information',
     venue: 'Cross-Cultural Design, HCII 2024, Lecture Notes in Computer Science',
