@@ -13,7 +13,7 @@
   <meta property="og:description" content="Human-AI interaction · Explainable AI · Neuroergonomics · Tsinghua University" />
   <meta name="twitter:card" content="summary" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=10" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=11" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -56,6 +56,14 @@
         <a href="#contact" data-i18n="navContact">Contact</a>
       </nav>
       <div class="header-actions">
+        <!-- FEATURE: accent theme switcher (可整块注释掉) -->
+        <div class="accent-switcher" id="accentSwitcher" role="group" aria-label="Accent color">
+          <button class="accent-dot" type="button" data-accent="blue" style="--dot:#1e40af" aria-label="Blue"></button>
+          <button class="accent-dot" type="button" data-accent="teal" style="--dot:#0f766e" aria-label="Teal"></button>
+          <button class="accent-dot" type="button" data-accent="violet" style="--dot:#6d28d9" aria-label="Violet"></button>
+          <button class="accent-dot" type="button" data-accent="rose" style="--dot:#be123c" aria-label="Rose"></button>
+        </div>
+        <!-- /FEATURE: accent theme switcher -->
         <button id="langToggle" class="lang-toggle" type="button" aria-label="Switch language / 切换语言">
           <span class="lang-option lang-option--active" id="langEn">EN</span>
           <span class="lang-sep">|</span>
@@ -108,6 +116,28 @@
           <li data-i18n-block="interest3">Algorithmic Management &amp; the Future of Work</li>
           <li data-i18n-block="interest4">Cross-Cultural HCI</li>
         </ul>
+        <!-- FEATURE: cross-modal demo (可整块注释掉) -->
+        <div class="cm-demo" id="crossModalDemo">
+          <div class="cm-head">
+            <span class="cm-title" data-i18n="cmDemoTitle">Try it — Color–Touch Cross-Modal Correspondence</span>
+            <span class="cm-hint" data-i18n="cmDemoHint">Hover a color to feel its cross-modal "tactile" impression.</span>
+          </div>
+          <div class="cm-body">
+            <div class="cm-swatches" id="cmSwatches">
+              <button class="cm-swatch" type="button" data-cm="red" style="--c:#d64545" aria-label="Red"></button>
+              <button class="cm-swatch" type="button" data-cm="orange" style="--c:#e8833a" aria-label="Orange"></button>
+              <button class="cm-swatch" type="button" data-cm="yellow" style="--c:#d9a92b" aria-label="Yellow"></button>
+              <button class="cm-swatch" type="button" data-cm="green" style="--c:#3f8f5f" aria-label="Green"></button>
+              <button class="cm-swatch" type="button" data-cm="blue" style="--c:#4a7fb5" aria-label="Blue"></button>
+              <button class="cm-swatch" type="button" data-cm="purple" style="--c:#8a5bb5" aria-label="Purple"></button>
+            </div>
+            <div class="cm-output">
+              <span class="cm-pulse" id="cmPulse"></span>
+              <span class="cm-desc" id="cmDesc"></span>
+            </div>
+          </div>
+        </div>
+        <!-- /FEATURE: cross-modal demo -->
       </div>
     </section>
 
@@ -204,6 +234,36 @@
       </div>
     </section>
 
+    <!-- FEATURE: beyond the lab (可整块注释掉) -->
+    <section class="section" id="beyond">
+      <div class="container">
+        <h2 class="section-title" data-i18n="beyondTitle">Beyond the Lab</h2>
+        <div class="beyond-grid">
+          <div class="beyond-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-8 3 3 3-5 6 10z"/><path d="M12 9l-2 2"/></svg>
+            <span data-i18n="hobbyHiking">Hiking</span>
+          </div>
+          <div class="beyond-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="2.2"/><circle cx="8.5" cy="9" r="0.9" fill="currentColor" stroke="none"/><circle cx="15.5" cy="9" r="0.9" fill="currentColor" stroke="none"/><circle cx="9.5" cy="15" r="0.9" fill="currentColor" stroke="none"/></svg>
+            <span data-i18n="hobbyArt">Art</span>
+          </div>
+          <div class="beyond-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V6l10-2v12"/><circle cx="7.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>
+            <span data-i18n="hobbyTheatre">Musical Theatre</span>
+          </div>
+          <div class="beyond-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="10" rx="5"/><path d="M8 11v4M7 13h2M16 12h.01M19 14h.01"/></svg>
+            <span data-i18n="hobbyGaming">Gaming</span>
+          </div>
+          <div class="beyond-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8v8M18 8v8M3 10v4M21 10v4M6 11h2M16 11h2"/></svg>
+            <span data-i18n="hobbySports">Sports</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /FEATURE: beyond the lab -->
+
     <!-- ================= CONTACT ================= -->
     <section class="section" id="contact">
       <div class="container">
@@ -237,6 +297,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/app.js?v=10"></script>
+  <script src="assets/js/app.js?v=11"></script>
 </body>
 </html>

@@ -48,6 +48,14 @@ const I18N = {
     contactAddressBody: 'Department of Industrial Engineering, Tsinghua University, Beijing, China',
     contactProfilesTitle: 'Profiles',
     footerSub: 'Human–AI Interaction · Explainable AI · Neuroergonomics',
+    cmDemoTitle: 'Try it — Color–Touch Cross-Modal Correspondence',
+    cmDemoHint: 'Hover a color to feel its cross-modal "tactile" impression.',
+    beyondTitle: 'Beyond the Lab',
+    hobbyHiking: 'Hiking',
+    hobbyArt: 'Art',
+    hobbyTheatre: 'Musical Theatre',
+    hobbyGaming: 'Gaming',
+    hobbySports: 'Sports',
     /* dynamic (rendered by JS) */
     pubGroupJournal: 'Journal Articles',
     pubGroupConference: 'Conference Papers',
@@ -104,6 +112,14 @@ const I18N = {
     contactAddressBody: '北京市海淀区清华大学工业工程系',
     contactProfilesTitle: '学术主页',
     footerSub: '人机交互 · 可解释 AI · 神经人因学',
+    cmDemoTitle: '体验一下 · 色–触跨模态对应',
+    cmDemoHint: '把鼠标悬停在颜色上，感受它带来的“触感”。',
+    beyondTitle: '研究之外',
+    hobbyHiking: '徒步',
+    hobbyArt: '美术',
+    hobbyTheatre: '音乐剧',
+    hobbyGaming: '游戏',
+    hobbySports: '运动',
     pubGroupJournal: '期刊论文',
     pubGroupConference: '会议论文',
     pubGroupBook: '图书章节',
@@ -528,6 +544,7 @@ function applyLang(lang) {
   renderPubs();
   renderExperience();
   renderNews();
+  document.dispatchEvent(new CustomEvent('langchange', { detail: lang }));
 
   /* toggle button state */
   const en = document.getElementById('langEn');
@@ -599,6 +616,70 @@ document.querySelectorAll('.site-nav a').forEach((a) => {
   });
 });
 
+/* ---------------- Feature modules ---------------- */
+/* 每个功能独立封装：不需要某功能时，把 index.html 里对应 HTML 块注释掉即可，下面的 init 会自动跳过。 */
+const FEATURES = {
+  accentSwitcher: true,
+  crossModalDemo: true,
+};
+
+/* FEATURE: accent theme switcher */
+function initAccentSwitcher() {
+  const root = document.getElementById('accentSwitcher');
+  if (!root) return;
+  const saved = localStorage.getItem('site-accent') || 'blue';
+  const apply = (key) => {
+    document.documentElement.setAttribute('data-accent', key);
+    localStorage.setItem('site-accent', key);
+    root.querySelectorAll('.accent-dot').forEach((d) => {
+      d.classList.toggle('accent-dot--active', d.dataset.accent === key);
+    });
+  };
+  root.querySelectorAll('.accent-dot').forEach((d) => {
+    d.addEventListener('click', () => apply(d.dataset.accent));
+  });
+  apply(saved);
+}
+
+/* FEATURE: cross-modal demo */
+const CM_DATA = {
+  red:    { c: '#d64545', en: 'fast & strong', zh: '急促而强烈', dur: 0.5, scale: 1.7 },
+  orange: { c: '#e8833a', en: 'warm & firm',   zh: '温暖而有力', dur: 0.7, scale: 1.5 },
+  yellow: { c: '#d9a92b', en: 'light & quick', zh: '轻快而明亮', dur: 0.6, scale: 1.3 },
+  green:  { c: '#3f8f5f', en: 'steady & calm', zh: '平稳而舒缓', dur: 1.1, scale: 1.0 },
+  blue:   { c: '#4a7fb5', en: 'slow & gentle', zh: '缓慢而柔和', dur: 1.4, scale: 0.85 },
+  purple: { c: '#8a5bb5', en: 'deep & soft',   zh: '深沉而柔软', dur: 1.2, scale: 1.1 },
+};
+function initCrossModalDemo() {
+  const demo = document.getElementById('crossModalDemo');
+  if (!demo) return;
+  const swatches = document.getElementById('cmSwatches');
+  const pulse = document.getElementById('cmPulse');
+  const desc = document.getElementById('cmDesc');
+  let activeKey = null;
+  const activate = (key) => {
+    activeKey = key;
+    const d = CM_DATA[key];
+    swatches.querySelectorAll('.cm-swatch').forEach((s) => {
+      s.classList.toggle('cm-swatch--active', s.dataset.cm === key);
+    });
+    pulse.style.background = d.c;
+    pulse.style.setProperty('--cm-dur', d.dur + 's');
+    pulse.style.setProperty('--cm-scale', d.scale);
+    desc.textContent = d[currentLang];
+    demo.classList.add('is-active');
+  };
+  swatches.querySelectorAll('.cm-swatch').forEach((s) => {
+    s.addEventListener('mouseenter', () => activate(s.dataset.cm));
+    s.addEventListener('focus', () => activate(s.dataset.cm));
+  });
+  document.addEventListener('langchange', () => {
+    if (activeKey) desc.textContent = CM_DATA[activeKey][currentLang];
+  });
+}
 /* ---------------- Init ---------------- */
 document.getElementById('year').textContent = new Date().getFullYear();
 applyLang(currentLang);
+
+try { if (FEATURES.accentSwitcher) initAccentSwitcher(); } catch (e) { /* isolated */ }
+try { if (FEATURES.crossModalDemo) initCrossModalDemo(); } catch (e) { /* isolated */ }

@@ -303,3 +303,53 @@ a:hover { text-decoration: underline; }
   body { background: #fff; color: #000; }
   .section { padding: 18px 0; }
 }
+
+
+/* ============================================================
+   FEATURE: accent theme switcher (可整块注释/删除，不影响其他样式)
+   ============================================================ */
+.accent-switcher { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--border); background: var(--card); border-radius: 999px; padding: 5px 10px; }
+.accent-dot { width: 15px; height: 15px; border-radius: 50%; border: none; cursor: pointer; padding: 0; background: var(--dot, var(--accent)); }
+.accent-dot--active { box-shadow: 0 0 0 2px var(--card), 0 0 0 3px var(--dot, var(--accent)); }
+
+/* accent palettes (blue = 默认，已在 :root 定义) */
+[data-accent="teal"]   { --accent: #0f766e; --accent-strong: #115e59; --accent-soft: #e6f7f5; }
+[data-accent="violet"] { --accent: #6d28d9; --accent-strong: #5b21b6; --accent-soft: #f3eefe; }
+[data-accent="rose"]   { --accent: #be123c; --accent-strong: #9f1239; --accent-soft: #fdeaf0; }
+@media (prefers-color-scheme: dark) {
+  [data-accent="teal"]   { --accent: #5eead4; --accent-strong: #99f6e4; --accent-soft: #0c2b27; }
+  [data-accent="violet"] { --accent: #c4b5fd; --accent-strong: #ddd6fe; --accent-soft: #251b40; }
+  [data-accent="rose"]   { --accent: #fda4af; --accent-strong: #fecdd3; --accent-soft: #3a1219; }
+}
+
+/* ============================================================
+   FEATURE: cross-modal demo (可整块注释/删除)
+   ============================================================ */
+.cm-demo { margin-top: 24px; background: var(--card); border: 1px dashed var(--border); border-radius: var(--radius); padding: 18px 20px; }
+.cm-head { display: flex; flex-direction: column; gap: 2px; margin-bottom: 14px; }
+.cm-title { font-weight: 600; font-size: 0.95rem; color: var(--accent-strong); }
+.cm-hint { font-size: 0.84rem; color: var(--muted); }
+.cm-body { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.cm-swatches { display: flex; gap: 8px; flex-wrap: wrap; }
+.cm-swatch { width: 30px; height: 30px; border-radius: 8px; border: 2px solid var(--card); box-shadow: var(--shadow); cursor: pointer; padding: 0; background: var(--c); transition: transform 0.12s ease; }
+.cm-swatch:hover { transform: translateY(-2px); }
+.cm-swatch--active { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--c); }
+.cm-output { display: flex; align-items: center; gap: 12px; }
+.cm-pulse { position: relative; width: 30px; height: 30px; border-radius: 50%; background: var(--accent); flex-shrink: 0; transition: background 0.2s ease; }
+.cm-pulse::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: inherit; opacity: 0; }
+.cm-demo.is-active .cm-pulse::after { animation: cmRing var(--cm-dur, 1s) ease-out infinite; }
+@keyframes cmRing { 0% { transform: scale(1); opacity: 0.55; } 100% { transform: scale(var(--cm-scale, 1.8)); opacity: 0; } }
+.cm-desc { font-size: 0.9rem; color: var(--text-soft); min-width: 90px; }
+.cm-demo.is-active .cm-desc { color: var(--text); font-weight: 600; }
+
+/* ============================================================
+   FEATURE: beyond the lab (可整块注释/删除)
+   ============================================================ */
+.beyond-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; }
+.beyond-item { display: flex; align-items: center; gap: 10px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; box-shadow: var(--shadow); }
+.beyond-item svg { width: 24px; height: 24px; stroke: var(--accent); flex-shrink: 0; }
+.beyond-item span { font-size: 0.92rem; color: var(--text-soft); font-weight: 500; }
+
+@media (max-width: 860px) {
+  .header-actions { flex-wrap: wrap; justify-content: flex-end; }
+}
