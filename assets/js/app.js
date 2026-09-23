@@ -49,7 +49,9 @@ const I18N = {
     contactProfilesTitle: 'Profiles',
     footerSub: 'Human–AI Interaction · Explainable AI · Neuroergonomics',
     cmDemoTitle: 'Try it — Color–Touch Cross-Modal Correspondence',
-    cmDemoHint: 'Hover a color to feel its cross-modal "tactile" impression.',
+    cmDemoHint: 'Hover to preview a theme colour; click to apply. Pulse size = vibration amplitude.',
+    cmNoteFirm: 'Core finding: higher colour chroma ↔ stronger vibration (Yuan et al., 2023, 2026)',
+    cmNotePrelim: '† Hue↔vibration mapping is preliminary',
     beyondTitle: 'Beyond the Lab',
     hobbyHiking: 'Hiking',
     hobbyCooking: 'Cooking',
@@ -113,7 +115,9 @@ const I18N = {
     contactProfilesTitle: '学术主页',
     footerSub: '人机交互 · 可解释 AI · 神经人因学',
     cmDemoTitle: '体验一下 · 色–触跨模态对应',
-    cmDemoHint: '把鼠标悬停在颜色上，感受它带来的“触感”。',
+    cmDemoHint: '悬停预览主题色，点击应用；圆点扩散幅度 = 振动振幅。',
+    cmNoteFirm: '核心结论：颜色彩度(chroma)越高 ↔ 振动越强（Yuan et al., 2023, 2026）',
+    cmNotePrelim: '† 色相↔振动的映射为初步探索',
     beyondTitle: '研究之外',
     hobbyHiking: '徒步',
     hobbyCooking: '烹饪',
@@ -624,67 +628,66 @@ const FEATURES = {
 };
 
 /* FEATURE: accent theme switcher */
+const ACCENT = (() => {
+  const hexToRgb = (h) => { const n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; };
+  const rgbToHex = (r, g, b) => '#' + [r, g, b].map((v) => Math.max(0, Math.min(255, Math.round(v))).toString(16).padStart(2, '0')).join('');
+  const mix = (a, b, t) => { const A = hexToRgb(a); const B = hexToRgb(b); return rgbToHex(A[0] + (B[0] - A[0]) * t, A[1] + (B[1] - A[1]) * t, A[2] + (B[2] - A[2]) * t); };
+  const applyVars = (hex) => {
+    document.documentElement.style.setProperty('--accent', hex);
+    document.documentElement.style.setProperty('--accent-strong', mix(hex, '#000000', 0.18));
+    document.documentElement.style.setProperty('--accent-soft', mix(hex, '#ffffff', 0.9));
+  };
+  const clearVars = () => { ['--accent', '--accent-strong', '--accent-soft'].forEach((v) => document.documentElement.style.removeProperty(v)); };
+  const syncDots = () => {
+    const root = document.getElementById('accentSwitcher');
+    if (!root) return;
+    const cur = document.documentElement.getAttribute('data-accent');
+    root.querySelectorAll('.accent-dot').forEach((d) => d.classList.toggle('accent-dot--active', (d.dataset.accent || 'custom') === cur));
+  };
+  const commit = (hex) => {
+    applyVars(hex);
+    document.documentElement.setAttribute('data-accent', 'custom');
+    localStorage.setItem('site-accent', 'custom');
+    localStorage.setItem('site-accent-custom', hex);
+    const input = document.getElementById('accentColorInput');
+    if (input) input.value = hex;
+    syncDots();
+  };
+  const applyPreset = (key) => {
+    clearVars();
+    document.documentElement.setAttribute('data-accent', key);
+    localStorage.setItem('site-accent', key);
+    syncDots();
+  };
+  const restore = () => {
+    const saved = localStorage.getItem('site-accent') || 'blue';
+    const savedCustom = localStorage.getItem('site-accent-custom');
+    if (saved === 'custom' && savedCustom) commit(savedCustom); else applyPreset(saved);
+  };
+  return { preview: applyVars, commit, applyPreset, restore };
+})();
+
 function initAccentSwitcher() {
   const root = document.getElementById('accentSwitcher');
   if (!root) return;
   const input = document.getElementById('accentColorInput');
   const customBtn = document.getElementById('accentCustom');
-  const saved = localStorage.getItem('site-accent') || 'blue';
-  const savedCustom = localStorage.getItem('site-accent-custom');
-  const hexToRgb = (h) => {
-    const n = parseInt(h.slice(1), 16);
-    return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
-  };
-  const rgbToHex = (r, g, b) => '#' + [r, g, b]
-    .map((v) => Math.max(0, Math.min(255, Math.round(v))).toString(16).padStart(2, '0')).join('');
-  const mix = (a, b, t) => {
-    const A = hexToRgb(a); const B = hexToRgb(b);
-    return rgbToHex(A[0] + (B[0] - A[0]) * t, A[1] + (B[1] - A[1]) * t, A[2] + (B[2] - A[2]) * t);
-  };
-  const clearCustom = () => {
-    document.documentElement.style.removeProperty('--accent');
-    document.documentElement.style.removeProperty('--accent-strong');
-    document.documentElement.style.removeProperty('--accent-soft');
-  };
-  const syncDots = () => {
-    const cur = document.documentElement.getAttribute('data-accent');
-    root.querySelectorAll('.accent-dot').forEach((d) => {
-      d.classList.toggle('accent-dot--active', (d.dataset.accent || 'custom') === cur);
-    });
-  };
-  const apply = (key) => {
-    clearCustom();
-    document.documentElement.setAttribute('data-accent', key);
-    localStorage.setItem('site-accent', key);
-    syncDots();
-  };
-  const applyCustom = (hex) => {
-    document.documentElement.setAttribute('data-accent', 'custom');
-    document.documentElement.style.setProperty('--accent', hex);
-    document.documentElement.style.setProperty('--accent-strong', mix(hex, '#000000', 0.18));
-    document.documentElement.style.setProperty('--accent-soft', mix(hex, '#ffffff', 0.9));
-    localStorage.setItem('site-accent', 'custom');
-    localStorage.setItem('site-accent-custom', hex);
-    if (input) input.value = hex;
-    syncDots();
-  };
   root.querySelectorAll('.accent-dot').forEach((d) => {
-    if (d.dataset.accent) d.addEventListener('click', () => apply(d.dataset.accent));
+    if (d.dataset.accent) d.addEventListener('click', () => ACCENT.applyPreset(d.dataset.accent));
   });
   if (customBtn) customBtn.addEventListener('click', () => { if (input) input.click(); });
-  if (input) input.addEventListener('input', (e) => applyCustom(e.target.value));
-  if (saved === 'custom' && savedCustom) applyCustom(savedCustom);
-  else apply(saved);
+  if (input) input.addEventListener('input', (e) => ACCENT.commit(e.target.value));
+  ACCENT.restore();
 }
 
 /* FEATURE: cross-modal demo */
 const CM_DATA = {
-  red:    { c: '#d64545', en: 'fast & strong', zh: '急促而强烈', dur: 0.5, scale: 1.7 },
-  orange: { c: '#e8833a', en: 'warm & firm',   zh: '温暖而有力', dur: 0.7, scale: 1.5 },
-  yellow: { c: '#d9a92b', en: 'light & quick', zh: '轻快而明亮', dur: 0.6, scale: 1.3 },
-  green:  { c: '#3f8f5f', en: 'steady & calm', zh: '平稳而舒缓', dur: 1.1, scale: 1.0 },
-  blue:   { c: '#4a7fb5', en: 'slow & gentle', zh: '缓慢而柔和', dur: 1.4, scale: 0.85 },
-  purple: { c: '#8a5bb5', en: 'deep & soft',   zh: '深沉而柔软', dur: 1.2, scale: 1.1 },
+  red:    { c: '#d64545', en: 'high amplitude · strong', zh: '高振幅 · 强振动', dur: 0.9, scale: 1.8 },
+  orange: { c: '#e8833a', en: 'medium amplitude · medium', zh: '中等振幅 · 中等振动', dur: 0.9, scale: 1.5 },
+  yellow: { c: '#d9a92b', en: 'low amplitude · weak', zh: '低振幅 · 弱振动', dur: 0.9, scale: 1.2 },
+  green:  { c: '#3f8f5f', en: 'low amplitude · weak', zh: '低振幅 · 弱振动', dur: 0.9, scale: 1.2 },
+  blue:   { c: '#4a7fb5', en: 'high amplitude · strong', zh: '高振幅 · 强振动', dur: 0.9, scale: 1.8 },
+  purple: { c: '#8a5bb5', en: 'high amplitude · strong', zh: '高振幅 · 强振动', dur: 0.9, scale: 1.8 },
 };
 function initCrossModalDemo() {
   const demo = document.getElementById('crossModalDemo');
@@ -692,9 +695,14 @@ function initCrossModalDemo() {
   const swatches = document.getElementById('cmSwatches');
   const pulse = document.getElementById('cmPulse');
   const desc = document.getElementById('cmDesc');
-  let activeKey = null;
+  let hoverKey = null;
+  let lockedKey = null;
+  const renderDesc = () => {
+    const key = hoverKey || lockedKey;
+    desc.textContent = key ? CM_DATA[key][currentLang] + ' †' : '';
+  };
   const activate = (key) => {
-    activeKey = key;
+    hoverKey = key;
     const d = CM_DATA[key];
     swatches.querySelectorAll('.cm-swatch').forEach((s) => {
       s.classList.toggle('cm-swatch--active', s.dataset.cm === key);
@@ -702,16 +710,42 @@ function initCrossModalDemo() {
     pulse.style.background = d.c;
     pulse.style.setProperty('--cm-dur', d.dur + 's');
     pulse.style.setProperty('--cm-scale', d.scale);
-    desc.textContent = d[currentLang];
     demo.classList.add('is-active');
+    ACCENT.preview(d.c);
+    renderDesc();
+  };
+  const deactivate = () => {
+    hoverKey = null;
+    swatches.querySelectorAll('.cm-swatch').forEach((s) => s.classList.remove('cm-swatch--active'));
+    demo.classList.remove('is-active');
+    ACCENT.restore();
+    renderDesc();
+  };
+  const lock = (key) => {
+    lockedKey = key;
+    ACCENT.commit(CM_DATA[key].c);
+    swatches.querySelectorAll('.cm-swatch').forEach((s) => {
+      s.classList.toggle('cm-swatch--locked', s.dataset.cm === key);
+    });
+    renderDesc();
   };
   swatches.querySelectorAll('.cm-swatch').forEach((s) => {
     s.addEventListener('mouseenter', () => activate(s.dataset.cm));
     s.addEventListener('focus', () => activate(s.dataset.cm));
+    s.addEventListener('mouseleave', () => deactivate());
+    s.addEventListener('blur', () => deactivate());
+    s.addEventListener('click', () => lock(s.dataset.cm));
   });
-  document.addEventListener('langchange', () => {
-    if (activeKey) desc.textContent = CM_DATA[activeKey][currentLang];
-  });
+  document.addEventListener('langchange', () => renderDesc());
+  const savedCustom = localStorage.getItem('site-accent-custom');
+  if (savedCustom) {
+    const match = Object.keys(CM_DATA).find((k) => CM_DATA[k].c.toLowerCase() === savedCustom.toLowerCase());
+    if (match) {
+      lockedKey = match;
+      swatches.querySelectorAll('.cm-swatch').forEach((s) => s.classList.toggle('cm-swatch--locked', s.dataset.cm === match));
+      renderDesc();
+    }
+  }
 }
 /* ---------------- Init ---------------- */
 document.getElementById('year').textContent = new Date().getFullYear();

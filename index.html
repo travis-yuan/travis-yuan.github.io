@@ -13,7 +13,7 @@
   <meta property="og:description" content="Human-AI interaction · Explainable AI · Neuroergonomics · Tsinghua University" />
   <meta name="twitter:card" content="summary" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=12" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=13" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -122,7 +122,7 @@
         <div class="cm-demo" id="crossModalDemo">
           <div class="cm-head">
             <span class="cm-title" data-i18n="cmDemoTitle">Try it — Color–Touch Cross-Modal Correspondence</span>
-            <span class="cm-hint" data-i18n="cmDemoHint">Hover a color to feel its cross-modal "tactile" impression.</span>
+            <span class="cm-hint" data-i18n="cmDemoHint">Hover to preview a theme colour; click to apply. Pulse size = vibration amplitude.</span>
           </div>
           <div class="cm-body">
             <div class="cm-swatches" id="cmSwatches">
@@ -137,6 +137,10 @@
               <span class="cm-pulse" id="cmPulse"></span>
               <span class="cm-desc" id="cmDesc"></span>
             </div>
+          </div>
+          <div class="cm-note">
+            <p data-i18n="cmNoteFirm">Core finding: higher colour chroma ↔ stronger vibration (Yuan et al., 2023, 2026)</p>
+            <p class="cm-note-sub" data-i18n="cmNotePrelim">† Hue↔vibration mapping is preliminary</p>
           </div>
         </div>
         <!-- /FEATURE: cross-modal demo -->
@@ -301,6 +305,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/app.js?v=12"></script>
+  <script src="assets/js/app.js?v=13"></script>
 </body>
 </html>
