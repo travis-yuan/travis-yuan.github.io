@@ -52,8 +52,8 @@ const I18N = {
     cmDemoHint: 'Hover a color to feel its cross-modal "tactile" impression.',
     beyondTitle: 'Beyond the Lab',
     hobbyHiking: 'Hiking',
-    hobbyArt: 'Art',
-    hobbyTheatre: 'Musical Theatre',
+    hobbyCooking: 'Cooking',
+    hobbyTheatre: 'Musical',
     hobbyGaming: 'Gaming',
     hobbySports: 'Sports',
     /* dynamic (rendered by JS) */
@@ -116,7 +116,7 @@ const I18N = {
     cmDemoHint: '把鼠标悬停在颜色上，感受它带来的“触感”。',
     beyondTitle: '研究之外',
     hobbyHiking: '徒步',
-    hobbyArt: '美术',
+    hobbyCooking: '烹饪',
     hobbyTheatre: '音乐剧',
     hobbyGaming: '游戏',
     hobbySports: '运动',
@@ -627,18 +627,54 @@ const FEATURES = {
 function initAccentSwitcher() {
   const root = document.getElementById('accentSwitcher');
   if (!root) return;
+  const input = document.getElementById('accentColorInput');
+  const customBtn = document.getElementById('accentCustom');
   const saved = localStorage.getItem('site-accent') || 'blue';
-  const apply = (key) => {
-    document.documentElement.setAttribute('data-accent', key);
-    localStorage.setItem('site-accent', key);
+  const savedCustom = localStorage.getItem('site-accent-custom');
+  const hexToRgb = (h) => {
+    const n = parseInt(h.slice(1), 16);
+    return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+  };
+  const rgbToHex = (r, g, b) => '#' + [r, g, b]
+    .map((v) => Math.max(0, Math.min(255, Math.round(v))).toString(16).padStart(2, '0')).join('');
+  const mix = (a, b, t) => {
+    const A = hexToRgb(a); const B = hexToRgb(b);
+    return rgbToHex(A[0] + (B[0] - A[0]) * t, A[1] + (B[1] - A[1]) * t, A[2] + (B[2] - A[2]) * t);
+  };
+  const clearCustom = () => {
+    document.documentElement.style.removeProperty('--accent');
+    document.documentElement.style.removeProperty('--accent-strong');
+    document.documentElement.style.removeProperty('--accent-soft');
+  };
+  const syncDots = () => {
+    const cur = document.documentElement.getAttribute('data-accent');
     root.querySelectorAll('.accent-dot').forEach((d) => {
-      d.classList.toggle('accent-dot--active', d.dataset.accent === key);
+      d.classList.toggle('accent-dot--active', (d.dataset.accent || 'custom') === cur);
     });
   };
+  const apply = (key) => {
+    clearCustom();
+    document.documentElement.setAttribute('data-accent', key);
+    localStorage.setItem('site-accent', key);
+    syncDots();
+  };
+  const applyCustom = (hex) => {
+    document.documentElement.setAttribute('data-accent', 'custom');
+    document.documentElement.style.setProperty('--accent', hex);
+    document.documentElement.style.setProperty('--accent-strong', mix(hex, '#000000', 0.18));
+    document.documentElement.style.setProperty('--accent-soft', mix(hex, '#ffffff', 0.9));
+    localStorage.setItem('site-accent', 'custom');
+    localStorage.setItem('site-accent-custom', hex);
+    if (input) input.value = hex;
+    syncDots();
+  };
   root.querySelectorAll('.accent-dot').forEach((d) => {
-    d.addEventListener('click', () => apply(d.dataset.accent));
+    if (d.dataset.accent) d.addEventListener('click', () => apply(d.dataset.accent));
   });
-  apply(saved);
+  if (customBtn) customBtn.addEventListener('click', () => { if (input) input.click(); });
+  if (input) input.addEventListener('input', (e) => applyCustom(e.target.value));
+  if (saved === 'custom' && savedCustom) applyCustom(savedCustom);
+  else apply(saved);
 }
 
 /* FEATURE: cross-modal demo */
