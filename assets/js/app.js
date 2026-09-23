@@ -17,6 +17,7 @@ const I18N = {
     navContact: 'Contact',
     heroTitle: 'Ph.D. Candidate in Human Factors & Human–Computer Interaction',
     heroAffil: 'Department of Industrial Engineering · Tsinghua University',
+    heroName: 'Tianyi Yuan <span class="hero-name-zh">袁天一 (Travis)</span>',
     heroJobmarket: 'On the 2027 academic job market — open to postdoc & industry research roles.',
     labelEmail: 'Email',
     aboutTitle: 'About',
@@ -70,16 +71,17 @@ const I18N = {
     navExperience: '经历',
     navNews: '动态',
     navContact: '联系',
-    heroTitle: '人因工程与人机交互方向 博士研究生',
+    heroTitle: '人因工程与人机交互方向博士研究生',
     heroAffil: '清华大学 · 工业工程系',
-    heroJobmarket: '2027 届学术求职季进行中——欢迎博士后与产业研究岗位机会',
+    heroName: '袁天一 <span class="hero-name-zh">Tianyi Yuan (Travis)</span>',
+    heroJobmarket: '2027 学术招聘季求职中——开放博士后与产业研究岗位',
     labelEmail: '邮箱',
     aboutTitle: '简介',
-    about: '<p>我是<strong>袁天一（英文名 Travis）</strong>，清华大学管理科学与工程（人因工程方向）的博士研究生，师从<a href="https://www.ie.tsinghua.edu.cn/" target="_blank" rel="noopener">饶培伦教授</a>。我的研究横跨<strong>人机交互</strong>、<strong>可解释人工智能</strong>与<strong>神经人因学</strong>：我结合行为实验、大规模问卷与脑成像（fNIRS）方法，研究人们如何感知、信任并与智能系统协作。</p><p>论文发表于 <em>International Journal of Human–Computer Studies</em>、<em>Journal of Neural Engineering</em>、<em>Multisensory Research</em> 与 <em>CHI</em> 等期刊与会议，并与华为 UX 团队开展以人为中心的 AI 系统评估等产业研究合作。</p>',
+    about: '<p>我是<strong>袁天一（Travis）</strong>，清华大学管理科学与工程（人因工程方向）的博士研究生，师从<a href="https://www.ie.tsinghua.edu.cn/" target="_blank" rel="noopener">饶培伦教授</a>。我的研究聚焦于<strong>人机交互</strong>、<strong>可解释人工智能</strong>与<strong>神经人因学</strong>：结合行为实验、大规模问卷调查与脑成像（fNIRS）方法，研究人们如何感知、信任智能系统并与之协作。</p><p>论文发表于 <em>International Journal of Human–Computer Studies</em>、<em>Journal of Neural Engineering</em>、<em>Multisensory Research</em> 与 <em>CHI</em> 等期刊与会议，并与华为 UX 团队开展以人为中心的 AI 系统评估等产业研究合作。</p>',
     interestsTitle: '研究方向',
-    interest1: '<strong>人机交互与可解释AI</strong>——解释策略、任务情境与用户 AI 素养如何影响人机团队中的信任、参与和决策。',
-    interest2: '<strong>神经人因学与多感觉整合</strong>——跨模态对应（色–触）的神经机制（fNIRS）及其在多模态信息加工中的作用。',
-    interest3: '<strong>算法管理与未来工作</strong>——平台劳动中零工工作者如何感知并应对算法管理。',
+    interest1: '<strong>人机交互与可解释 AI</strong>——解释策略、任务情境与用户 AI 素养如何塑造人机团队中的信任、参与和决策。',
+    interest2: '<strong>神经人因学与多感官整合</strong>——跨模态对应（如色彩–触觉）的神经关联（fNIRS）及其在多模态信息加工中的作用。',
+    interest3: '<strong>算法管理与工作的未来</strong>——零工劳动者如何感知并应对平台劳动中的算法管理。',
     interest4: '<strong>跨文化人机交互</strong>——AI 素养、技术采纳与人机系统交互设计中的文化因素。',
     eduTitle: '教育经历',
     eduExpected: '预期',
@@ -92,7 +94,7 @@ const I18N = {
     selectedTitle: '代表论文',
     seeFullList: '查看全部论文',
     pubsTitle: '论文列表',
-    pubsNote: '点击标题打开出版社页面（DOI）；点“引用”查看/复制 BibTeX 条目。★ = 代表作品。',
+    pubsNote: '点击标题打开出版社页面（DOI）；点“引用”查看/复制 BibTeX 条目。★ = 代表作。',
     expTitle: '经历',
     expNote: '描述有意从简，项目细节按协议保密。',
     newsTitle: '动态',
@@ -101,7 +103,7 @@ const I18N = {
     contactAddressTitle: '办公室',
     contactAddressBody: '北京市海淀区清华大学工业工程系',
     contactProfilesTitle: '学术主页',
-    footerSub: '人机交互 · 可解释AI · 神经人因学',
+    footerSub: '人机交互 · 可解释 AI · 神经人因学',
     pubGroupJournal: '期刊论文',
     pubGroupConference: '会议论文',
     pubGroupBook: '图书章节',
@@ -538,7 +540,7 @@ function applyLang(lang) {
   );
   document.title = lang === 'en'
     ? 'Tianyi Yuan | Ph.D. Candidate in Human Factors & HCI, Tsinghua University'
-    : '袁天一 Tianyi Yuan | 清华大学 人因工程与人机交互方向 博士研究生';
+    : '袁天一（Tianyi Yuan）| 清华大学 人因工程与人机交互方向博士研究生';
 }
 
 /* ---------------- Interactions ---------------- */
