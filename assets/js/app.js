@@ -50,7 +50,7 @@ const I18N = {
     /* dynamic (rendered by JS) */
     pubGroupJournal: 'Journal Articles',
     pubGroupConference: 'Conference Papers',
-    pubGroupBook: 'Book Chapters (HCII · LNCS)',
+    pubGroupBook: 'Book Chapters',
     pubGroupZh: 'In Chinese',
     tagSelected: '★ Selected',
     tagFirst: 'First author',
@@ -104,7 +104,7 @@ const I18N = {
     footerSub: '人机交互 · 可解释AI · 神经人因学',
     pubGroupJournal: '期刊论文',
     pubGroupConference: '会议论文',
-    pubGroupBook: '论文集章节（HCII · LNCS）',
+    pubGroupBook: '图书章节',
     pubGroupZh: '中文论文',
     tagSelected: '★ 代表作',
     tagFirst: '第一作者',
@@ -250,7 +250,7 @@ const PUBLICATIONS = [
 }`
   },
   {
-    id: 'yuan2023design', year: 2023, type: 'book', selected: false,
+    id: 'yuan2023design', year: 2023, type: 'conference', selected: false,
     authors: [['Yuan, Tianyi', true], ['Wang, Zhecheng', false], ['Rau, Pei-Luen Patrick', false]],
     title: 'Design of Intelligent Real-Time Feedback System in Online Classroom',
     venue: 'Cross-Cultural Design, HCII 2023, Lecture Notes in Computer Science',
@@ -266,7 +266,7 @@ const PUBLICATIONS = [
 }`
   },
   {
-    id: 'yuan2024impact', year: 2024, type: 'book', selected: false,
+    id: 'yuan2024impact', year: 2024, type: 'conference', selected: false,
     authors: [['Yuan, Tianyi', true], ['Rau, Pei-Luen Patrick', false]],
     title: 'The Impact of Color-Touch Cross-Modal Correspondence on the Temporal Integration of Multimodal Information',
     venue: 'Cross-Cultural Design, HCII 2024, Lecture Notes in Computer Science',
@@ -282,7 +282,7 @@ const PUBLICATIONS = [
 }`
   },
   {
-    id: 'yuan2025cultural', year: 2025, type: 'book', selected: false,
+    id: 'yuan2025cultural', year: 2025, type: 'conference', selected: false,
     authors: [['Yuan, Tianyi', true], ['Rau, Pei-Luen Patrick', false]],
     title: 'Cultural Intelligence and Its Influencing Factors in the Chinese Context',
     venue: 'Cross-Cultural Design, HCII 2025, Lecture Notes in Computer Science',
@@ -298,7 +298,7 @@ const PUBLICATIONS = [
 }`
   },
   {
-    id: 'yuan2026lurking', year: 2026, type: 'book', selected: false,
+    id: 'yuan2026lurking', year: 2026, type: 'conference', selected: false,
     authors: [['Yuan, Tianyi', true], ['Rau, Pei-Luen Patrick', false]],
     title: 'From Passive Observers to Potential Assets: Reconceptualizing Lurking and Its Factors in Blended Spaces',
     venue: 'Cross-Cultural Design, HCII 2026, Lecture Notes in Computer Science',
@@ -311,6 +311,39 @@ const PUBLICATIONS = [
   pages={356--378},
   year={2026},
   doi={10.1007/978-3-032-29903-1_22}
+}`
+  },
+  {
+    id: 'yuan2026teaming', year: 2026, type: 'book', selected: false,
+    authors: [['Yuan, Tianyi', true], ['Yang, Minqian', false], ['Yu, Dian', false], ['Rau, Pei-Luen Patrick', false]],
+    title: 'Human-AI Teaming',
+    venue: 'Advances in Human-AI Collaboration (Wiley)',
+    detail: 'pp. 123–141',
+    doi: '10.1002/9781394266401.ch7',
+    bibtex: `@incollection{yuan2026teaming,
+  title={Human-{AI} Teaming},
+  author={Yuan, Tianyi and Yang, Minqian and Yu, Dian and Rau, Pei-Luen Patrick},
+  booktitle={Advances in Human-{AI} Collaboration},
+  pages={123--141},
+  year={2026},
+  publisher={Wiley},
+  doi={10.1002/9781394266401.ch7}
+}`
+  },
+  {
+    id: 'yuan2024boba', year: 2024, type: 'conference', selected: false,
+    authors: [['Yuan, Tianyi', true], ['Rau, Pei-Luen Patrick', false]],
+    title: 'Would boba and food characteristics impact the tasting experience? A Kansei Engineering study towards food mixed with boba',
+    venue: 'International Symposium on Affective Science and Engineering (ISASE 2024)',
+    detail: 'pp. 1–4',
+    doi: '10.5057/isase.2024-c000044',
+    bibtex: `@inproceedings{yuan2024boba,
+  title={Would boba and food characteristics impact the tasting experience? A {Kansei} Engineering study towards food mixed with boba},
+  author={Yuan, Tianyi and Rau, Pei-Luen Patrick},
+  booktitle={International Symposium on Affective Science and Engineering ({ISASE} 2024)},
+  pages={1--4},
+  year={2024},
+  doi={10.5057/isase.2024-c000044}
 }`
   },
   {
