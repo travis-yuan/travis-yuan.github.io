@@ -128,7 +128,6 @@ a:hover { text-decoration: underline; }
 .hero-text { flex: 1; min-width: 280px; }
 .hero-name { font-family: var(--serif); font-size: 2.2rem; margin: 0 0 6px; letter-spacing: 0.2px; }
 .hero-name-zh { font-size: 1.2rem; color: var(--muted); font-weight: 400; margin-left: 8px; }
-.hero-nickname { margin: 0 0 10px; color: var(--muted); font-size: 0.95rem; }
 .hero-title { font-size: 1.08rem; font-weight: 600; color: var(--accent); margin: 0 0 4px; }
 .hero-affil { margin: 0 0 10px; color: var(--text-soft); }
 .hero-jobmarket {
