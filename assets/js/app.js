@@ -8,6 +8,7 @@
 /* ---------------- i18n dictionary ---------------- */
 const I18N = {
   en: {
+    brandName: 'Tianyi Yuan',
     brandSub: 'Tsinghua University',
     navAbout: 'About',
     navEducation: 'Education',
@@ -74,6 +75,7 @@ const I18N = {
   },
 
   zh: {
+    brandName: '袁天一',
     brandSub: '清华大学',
     navAbout: '简介',
     navEducation: '教育',
