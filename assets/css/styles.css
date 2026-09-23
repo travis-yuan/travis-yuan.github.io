@@ -67,6 +67,7 @@ a:hover { text-decoration: underline; }
 /* ---------------- Header ---------------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
+  background: var(--bg);
   background: color-mix(in srgb, var(--bg) 88%, transparent);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
@@ -218,7 +219,7 @@ a:hover { text-decoration: underline; }
   font-size: 0.74rem; padding: 1px 9px; border-radius: 999px;
   background: var(--accent-soft); color: var(--accent-strong); font-weight: 600;
 }
-.tag--gold { background: color-mix(in srgb, var(--gold) 16%, transparent); color: var(--gold); }
+.tag--gold { background: #fbf0dd; background: color-mix(in srgb, var(--gold) 16%, transparent); color: var(--gold); }
 .pub-actions { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
 .mini-btn {
   font-size: 0.78rem; padding: 3px 10px; border-radius: 6px; cursor: pointer;
