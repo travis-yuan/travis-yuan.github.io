@@ -428,7 +428,7 @@ const COLLABORATIONS = [
     ]
   },
   {
-    org: { en: 'Honor (Huawei)', zh: '荣耀（华为）' },
+    org: { en: 'Honor', zh: '荣耀' },
     title: { en: 'UI Animation Fluency Research', zh: '动效流畅性研究' },
     role: { en: 'Project Lead', zh: '项目负责人' },
     period: { en: '2021.01 – 2022.03', zh: '2021.01 – 2022.03' },
