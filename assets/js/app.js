@@ -44,6 +44,10 @@ const I18N = {
     expTitle: 'Experience',
     expNote: 'Descriptions are intentionally brief; project details remain confidential per agreements.',
     collabTitle: 'Industry Collaborations',
+    metricCitations: 'Citations',
+    metricHIndex: 'h-index',
+    metricI10: 'i10-index',
+    metricUpdated: 'Updated',
     newsTitle: 'News',
     contactTitle: 'Contact',
     contactEmailTitle: 'Email',
@@ -111,6 +115,10 @@ const I18N = {
     expTitle: '经历',
     expNote: '描述有意从简，项目细节按协议保密。',
     collabTitle: '产学研合作',
+    metricCitations: '引用',
+    metricHIndex: 'h-index',
+    metricI10: 'i10-index',
+    metricUpdated: '更新于',
     newsTitle: '动态',
     contactTitle: '联系方式',
     contactEmailTitle: '邮箱',
@@ -698,6 +706,7 @@ document.querySelectorAll('.site-nav a').forEach((a) => {
 const FEATURES = {
   accentSwitcher: true,
   crossModalDemo: true,
+  metrics: true,
 };
 
 /* FEATURE: accent theme switcher */
@@ -820,9 +829,28 @@ function initCrossModalDemo() {
     }
   }
 }
+/* FEATURE: live academic metrics (Scholar sync) */
+function renderMetrics() {
+  const root = document.getElementById('metricsRoot');
+  if (!root) return;
+  fetch('assets/data/metrics.json', { cache: 'no-store' })
+    .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then((m) => {
+      if (!m || m.h_index == null) { root.hidden = true; return; }
+      const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = (v == null ? '—' : v); };
+      set('metricCitations', m.citations);
+      set('metricHIndex', m.h_index);
+      set('metricI10', m.i10_index);
+      set('metricUpdatedDate', m.updated_at || '—');
+      root.hidden = false;
+    })
+    .catch(() => { if (root) root.hidden = true; });
+}
+function initMetrics() { renderMetrics(); }
 /* ---------------- Init ---------------- */
 document.getElementById('year').textContent = new Date().getFullYear();
 applyLang(currentLang);
 
 try { if (FEATURES.accentSwitcher) initAccentSwitcher(); } catch (e) { /* isolated */ }
 try { if (FEATURES.crossModalDemo) initCrossModalDemo(); } catch (e) { /* isolated */ }
+try { if (FEATURES.metrics) initMetrics(); } catch (e) { /* isolated */ }
