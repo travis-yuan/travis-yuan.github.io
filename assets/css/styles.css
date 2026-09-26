@@ -361,12 +361,10 @@ a:hover { text-decoration: underline; }
 @media (max-width: 860px) {
   .header-actions { flex-wrap: wrap; justify-content: flex-end; }
 }
-/* FEATURE: live academic metrics */
-.metrics { display: flex; flex-wrap: wrap; align-items: stretch; gap: 12px; margin: 20px 0 26px; }
+/* FEATURE: live academic metrics (discreet inline) */
+.metrics { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; margin: 14px 0 0; font-size: 0.84rem; color: var(--muted); }
 .metrics[hidden] { display: none; }
-.metric-card { flex: 1 1 120px; min-width: 120px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; text-align: center; }
-.metric-num { display: block; font-size: 1.7rem; font-weight: 700; color: var(--accent-strong); line-height: 1.1; }
-.metric-label { display: block; font-size: 0.82rem; color: var(--muted); margin-top: 5px; }
-.metric-foot { flex: 1 1 100%; font-size: 0.82rem; color: var(--muted); margin-top: 2px; }
-.metric-foot a { color: var(--accent-strong); font-weight: 600; }
-.metric-sep { margin: 0 6px; }
+.metric-src { font-weight: 600; color: var(--muted); }
+.metric-src:hover { color: var(--accent-strong); }
+.metrics strong { color: var(--text); font-weight: 600; }
+.metric-sep { opacity: 0.55; }

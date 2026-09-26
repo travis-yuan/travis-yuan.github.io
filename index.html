@@ -13,7 +13,7 @@
   <meta property="og:description" content="Human-AI interaction · Explainable AI · Neuroergonomics · Tsinghua University" />
   <meta name="twitter:card" content="summary" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=22" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=23" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -114,23 +114,15 @@
 
         <!-- FEATURE: live academic metrics (Scholar sync; 可整块注释掉) -->
         <div class="metrics" id="metricsRoot" hidden>
-          <div class="metric-card">
-            <span class="metric-num" id="metricCitations">—</span>
-            <span class="metric-label" data-i18n="metricCitations">Citations</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-num" id="metricHIndex">—</span>
-            <span class="metric-label" data-i18n="metricHIndex">h-index</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-num" id="metricI10">—</span>
-            <span class="metric-label" data-i18n="metricI10">i10-index</span>
-          </div>
-          <div class="metric-foot">
-            <a href="https://scholar.google.com/citations?user=NmS1SPEAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
-            <span class="metric-sep">·</span>
-            <span><span data-i18n="metricUpdated">Updated</span> <span id="metricUpdatedDate">—</span></span>
-          </div>
+          <a class="metric-src" href="https://scholar.google.com/citations?user=NmS1SPEAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <span class="metric-sep">·</span>
+          <span class="metric-item"><span data-i18n="metricCitations">Citations</span> <strong id="metricCitations">—</strong></span>
+          <span class="metric-sep">·</span>
+          <span class="metric-item"><span data-i18n="metricHIndex">h-index</span> <strong id="metricHIndex">—</strong></span>
+          <span class="metric-sep">·</span>
+          <span class="metric-item"><span data-i18n="metricI10">i10-index</span> <strong id="metricI10">—</strong></span>
+          <span class="metric-sep">·</span>
+          <span class="metric-item"><span data-i18n="metricUpdated">Updated</span> <span id="metricUpdatedDate">—</span></span>
         </div>
 
         <h3 class="subsection-title" data-i18n="interestsTitle">Research Interests</h3>
@@ -333,6 +325,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/app.js?v=22"></script>
+  <script src="assets/js/app.js?v=23"></script>
 </body>
 </html>
