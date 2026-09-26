@@ -447,7 +447,7 @@ const COLLABORATIONS = [
     ]
   },
   {
-    org: { en: 'Venucia (Dongfeng)', zh: '东风启辰' },
+    org: { en: 'Venucia', zh: '东风启辰' },
     title: { en: 'In-Vehicle Infotainment System Evaluation', zh: '车载中控交互系统测试与评估' },
     role: { en: 'Project Member', zh: '项目组成员' },
     period: { en: '2019.10 – 2020.03', zh: '2019.10 – 2020.03' },
@@ -588,9 +588,7 @@ function renderCollaborations() {
         </div>
         <span class="exp-period">${c.period[currentLang]}</span>
       </div>
-      <ul class="exp-bullets">
-        ${c.bullets.map((b) => `<li>${b[currentLang]}</li>`).join('')}
-      </ul>
+      <!-- project details (bullets) hidden; data retained in COLLABORATIONS -->
     </div>`).join('');
 }
 function renderNews() {
