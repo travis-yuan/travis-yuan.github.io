@@ -54,7 +54,6 @@ const I18N = {
     cmDemoTitle: 'Try it — Color–Touch Cross-Modal Correspondence',
     cmDemoHint: 'Hover to preview a theme colour; click to apply. Pulse size = vibration amplitude.',
     cmNoteFirm: 'Core finding: higher colour chroma ↔ stronger vibration (Yuan et al., 2023, 2026)',
-    cmNotePrelim: '† Hue↔vibration mapping is preliminary',
     beyondTitle: 'Beyond the Lab',
     hobbyHiking: 'Hiking',
     hobbyDesign: 'Design',
@@ -123,7 +122,6 @@ const I18N = {
     cmDemoTitle: '体验一下 · 色–触跨模态对应',
     cmDemoHint: '悬停预览主题色，点击应用；圆点扩散幅度 = 振动振幅。',
     cmNoteFirm: '核心结论：颜色彩度(chroma)越高 ↔ 振动越强（Yuan et al., 2023, 2026）',
-    cmNotePrelim: '† 色相↔振动的映射为初步探索',
     beyondTitle: '研究之外',
     hobbyHiking: '徒步',
     hobbyDesign: '设计',
@@ -778,7 +776,7 @@ function initCrossModalDemo() {
   let lockedKey = null;
   const renderDesc = () => {
     const key = hoverKey || lockedKey;
-    desc.textContent = key ? CM_DATA[key][currentLang] + ' †' : '';
+    desc.textContent = key ? CM_DATA[key][currentLang] : '';
   };
   const activate = (key) => {
     hoverKey = key;
