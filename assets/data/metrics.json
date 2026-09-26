@@ -1,11 +1,11 @@
 {
-  "citations": null,
-  "h_index": null,
-  "i10_index": null,
-  "citations_since": null,
-  "h_index_since": null,
-  "i10_index_since": null,
-  "updated_at": null,
+  "citations": 1693,
+  "h_index": 5,
+  "i10_index": 5,
+  "citations_since": 1689,
+  "h_index_since": 5,
+  "i10_index_since": 5,
+  "updated_at": "2026-09-26",
   "source": "Google Scholar (via SerpAPI)",
   "profile_url": "https://scholar.google.com/citations?user=NmS1SPEAAAAJ&hl=en"
 }
