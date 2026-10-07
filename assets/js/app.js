@@ -420,7 +420,7 @@ const COLLABORATIONS = [
   },
   {
     org: { en: 'Huawei', zh: '华为' },
-    title: { en: 'Human Factors Research on Intelligence-Grading Model', zh: '智能等级模型人因研究' },
+    title: { en: 'Intelligence-Grading Model for Intelligent Systems', zh: '智能系统智能分级模型' },
     role: { en: 'PI', zh: 'PI' },
     period: { en: '2024.10 – 2025.10', zh: '2024.10 – 2025.10' },
     bullets: [
@@ -444,7 +444,7 @@ const COLLABORATIONS = [
   {
     org: { en: 'Huawei', zh: '华为' },
     title: { en: 'User Experience Evaluation of Glasses-Free 3D Display', zh: '裸眼3D屏幕用户体验测试' },
-    role: { en: 'Project Lead', zh: '项目负责人' },
+    role: { en: 'PI', zh: 'PI' },
     period: { en: '2022.06 – 2023.06', zh: '2022.06 – 2023.06' },
     bullets: [
       { en: 'Designed experiments on how depth cues, viewing position, and image features affect user experience of glasses-free 3D displays.', zh: '围绕景深、观看位置与图像特征设计实验，评估其对裸眼3D屏幕用户体验的影响。' },
@@ -454,7 +454,7 @@ const COLLABORATIONS = [
   {
     org: { en: 'Honor', zh: '荣耀' },
     title: { en: 'UI Animation Fluency Research', zh: '动效流畅性研究' },
-    role: { en: 'Project Lead', zh: '项目负责人' },
+    role: { en: 'PI', zh: 'PI' },
     period: { en: '2021.01 – 2022.03', zh: '2021.01 – 2022.03' },
     bullets: [
       { en: 'Benchmarked UI design guidelines, color, and motion systems across Android/iOS and competing brands; authored an industry report on UI motion trends.', zh: '对标调研安卓/iOS 等主流手机 UI 设计规范、色彩与动效体系，撰写 UI 动效行业发展报告。' },
@@ -476,7 +476,7 @@ const COLLABORATIONS = [
   {
     org: { en: 'China State Railway Group', zh: '中国国家铁路集团' },
     title: { en: 'Wayfinding System Redesign for Hangzhou West Railway Station', zh: '杭州西站导视系统设计重构' },
-    role: { en: 'Project Member', zh: '项目组成员' },
+    role: { en: 'Member', zh: '成员' },
     period: { en: '2020.09 – 2021.04', zh: '2020.09 – 2021.04' },
     bullets: [
       { en: 'Visited ~10 high-speed railway stations across China to benchmark lighting, wayfinding, business models, and TOD development; simulated passenger flows with AnyLogic.', zh: '走访国内近十个高铁站，梳理室内照度、导视、商业模式与 TOD 建设痛点，并用 AnyLogic 对人流线路进行模拟仿真。' },
@@ -486,7 +486,7 @@ const COLLABORATIONS = [
   {
     org: { en: 'Venucia', zh: '东风启辰' },
     title: { en: 'In-Vehicle Infotainment System Evaluation', zh: '车载中控交互系统测试与评估' },
-    role: { en: 'Project Member', zh: '项目组成员' },
+    role: { en: 'Member', zh: '成员' },
     period: { en: '2019.10 – 2020.03', zh: '2019.10 – 2020.03' },
     bullets: [
       { en: 'Benchmarked infotainment systems of Tesla, NIO, XPeng, etc. and built a UX capability evaluation framework.', zh: '调研特斯拉、蔚来、小鹏等交互系统发展历程，建立用户交互工作建设评价体系。' },
