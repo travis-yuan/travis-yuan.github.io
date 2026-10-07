@@ -23,12 +23,11 @@ const I18N = {
     heroJobmarket: 'On the 2027 academic job market — open to postdoc & industry research roles.',
     labelEmail: 'Email',
     aboutTitle: 'About',
-    about: '<p>I am <strong>Tianyi (Travis) Yuan</strong>, a Ph.D. candidate in Human Factors and Human–Computer Interaction at Tsinghua University, advised by <a href="https://www.ie.tsinghua.edu.cn/en/" target="_blank" rel="noopener">Prof. Pei-Luen Patrick Rau</a>. My research sits at the intersection of <strong>human–AI interaction</strong>, <strong>explainable AI</strong>, and <strong>neuroergonomics</strong>: I combine behavioral experiments, large-scale surveys, and neuroimaging (fNIRS) to understand how people perceive, trust, and collaborate with intelligent systems.</p><p>My work has been published in venues including <em>International Journal of Human–Computer Studies</em>, <em>Journal of Neural Engineering</em>, <em>Multisensory Research</em>, and <em>CHI</em>. I have also led industry research collaborations with Huawei\'s UX team on human-centered evaluation of AI systems.</p>',
+    about: '<p>I am <strong>Tianyi (Travis) Yuan</strong>, a Ph.D. candidate in Human Factors and Human–Computer Interaction at Tsinghua University, advised by <a href="https://www.ie.tsinghua.edu.cn/en/" target="_blank" rel="noopener">Prof. Pei-Luen Patrick Rau</a>. My research sits at the intersection of <strong>human–AI interaction</strong>, <strong>explainable AI</strong>, <strong>multimodal interaction</strong>, and <strong>Cross-Cultural HCI</strong>: I combine behavioral experiments, large-scale surveys, and neuroimaging (fNIRS) to understand how people perceive, trust, and collaborate with intelligent systems.</p><p>My work has been published in venues including <em>International Journal of Human–Computer Studies</em>, <em>Journal of Neural Engineering</em>, <em>Multisensory Research</em>, and <em>CHI</em>. I have also led industry research collaborations with Huawei\'s UX team on human-centered evaluation of AI systems.</p>',
     interestsTitle: 'Research Interests',
     interest1: '<strong>Human–AI Interaction &amp; Explainable AI</strong> — How explanation strategies, task contexts, and users\' AI literacy shape trust, engagement, and decision-making in human–AI teams.',
     interest2: '<strong>Neuroergonomics &amp; Multisensory Perception</strong> — Neural (fNIRS) correlates of cross-modal correspondence and their role in multimodal information processing.',
-    interest3: '<strong>Algorithmic Management &amp; the Future of Work</strong> — How gig workers perceive and respond to algorithmic management in platform labor.',
-    interest4: '<strong>Cross-Cultural HCI</strong> — Cultural factors in AI literacy, technology adoption, and human–system interaction design.',
+    interest3: '<strong>Cross-Cultural HCI</strong> — Cultural factors in AI literacy, technology adoption, and human–system interaction design.',
     eduTitle: 'Education',
     eduExpected: 'expected',
     edu1Title: 'Ph.D., Management Science & Engineering (Human Factors track)',
@@ -94,12 +93,11 @@ const I18N = {
     heroJobmarket: '2027 学术招聘季求职中——开放博士后与产业研究岗位',
     labelEmail: '邮箱',
     aboutTitle: '简介',
-    about: '<p>我是<strong>袁天一（Travis）</strong>，清华大学管理科学与工程（人因工程方向）的博士研究生，师从<a href="https://www.ie.tsinghua.edu.cn/" target="_blank" rel="noopener">饶培伦教授</a>。我的研究聚焦于<strong>人机交互</strong>、<strong>可解释人工智能</strong>与<strong>神经人因学</strong>：结合行为实验、大规模问卷调查与脑成像（fNIRS）方法，研究人们如何感知、信任智能系统并与之协作。</p><p>论文发表于 <em>International Journal of Human–Computer Studies</em>、<em>Journal of Neural Engineering</em>、<em>Multisensory Research</em> 与 <em>CHI</em> 等期刊与会议，并与华为 UX 团队开展以人为中心的 AI 系统评估等产业研究合作。</p>',
+    about: '<p>我是<strong>袁天一（Travis）</strong>，清华大学管理科学与工程（人因工程方向）的博士研究生，师从<a href="https://www.ie.tsinghua.edu.cn/" target="_blank" rel="noopener">饶培伦教授</a>。我的研究聚焦于<strong>人机交互</strong>、<strong>可解释人工智能</strong>、<strong>多模态交互</strong>与<strong>跨文化人机交互</strong>：结合行为实验、大规模问卷调查与脑成像（fNIRS）方法，研究人们如何感知、信任智能系统并与之协作。</p><p>论文发表于 <em>International Journal of Human–Computer Studies</em>、<em>Journal of Neural Engineering</em>、<em>Multisensory Research</em> 与 <em>CHI</em> 等期刊与会议，并与华为 UX 团队开展以人为中心的 AI 系统评估等产业研究合作。</p>',
     interestsTitle: '研究方向',
     interest1: '<strong>人机交互与可解释 AI</strong>——解释策略、任务情境与用户 AI 素养如何塑造人机团队中的信任、参与和决策。',
     interest2: '<strong>神经人因学与多感官整合</strong>——跨模态对应（如色彩–触觉）的神经关联（fNIRS）及其在多模态信息加工中的作用。',
-    interest3: '<strong>算法管理与工作的未来</strong>——零工劳动者如何感知并应对平台劳动中的算法管理。',
-    interest4: '<strong>跨文化人机交互</strong>——AI 素养、技术采纳与人机系统交互设计中的文化因素。',
+    interest3: '<strong>跨文化人机交互</strong>——AI 素养、技术采纳与人机系统交互设计中的文化因素。',
     eduTitle: '教育经历',
     eduExpected: '预期',
     edu1Title: '博士 · 管理科学与工程（人因工程方向）',
@@ -412,13 +410,35 @@ const EXPERIENCE = [
 /* ---------------- Industry collaborations data ---------------- */
 const COLLABORATIONS = [
   {
+    org: { en: 'Mercedes-Benz', zh: '梅赛德斯-奔驰' },
+    title: { en: 'Multitasking In-Vehicle Intelligent UI Design and Evaluation', zh: '多任务车机智能UI设计与测试' },
+    role: { en: 'PI', zh: 'PI' },
+    period: { en: '2026.01 – present', zh: '2026.01 – 至今' },
+    bullets: [
+      { en: 'Designed intelligent in-vehicle UI solutions for multitasking scenarios under different driving conditions; in a lab vehicle mockup, participants drove in a Unity-based simulation system and evaluated the interfaces and driving tasks.', zh: '针对不同驾驶条件下的多任务场景设计车机智能UI方案；在实验室汽车实体模型中，组织被试于Unity模拟系统中完成驾驶，并对界面与驾驶任务进行评估。' }
+    ]
+  },
+  {
     org: { en: 'Huawei', zh: '华为' },
     title: { en: 'Human Factors Research on Intelligence-Grading Model', zh: '智能等级模型人因研究' },
-    role: { en: 'Project Lead', zh: '项目负责人' },
-    period: { en: '2025.10 – 2026.10', zh: '2025.10 – 2026.10' },
+    role: { en: 'PI', zh: 'PI' },
+    period: { en: '2024.10 – 2025.10', zh: '2024.10 – 2025.10' },
     bullets: [
-      { en: 'Built a grading framework and a user-perceived intelligence-grading model for terminal systems from a human-factors perspective, validated through literature review (70+ papers), expert interviews, and multi-stage experiments (70+ participants).', zh: '从人因研究视角构建智能终端系统智能等级的分级框架与用户感知智能等级评估模型，通过文献调研（70+ 篇）、专家访谈、多阶段实验（70+ 人次）与案例验证完成量化验证。' },
-      { en: 'As project lead, oversaw surveys, experimental design and execution, data analysis, and staged deliverables.', zh: '作为项目负责人统筹调研、实验设计执行、数据分析与各阶段交付。' }
+      { en: 'Built a grading framework and user-perceived intelligence-grading model for terminal systems from a human-factors perspective, validated through literature review (70+ papers), expert interviews, multi-stage experiments (70+ participants), and case validation.', zh: '从人因研究视角构建智能终端系统智能等级的分级框架与用户感知智能等级评估模型，通过文献调研（70+篇）、专家访谈、多阶段实验（70+人次）与案例验证完成量化验证。' },
+      { en: 'As project lead, oversaw surveys, experimental design and execution, data analysis, and staged deliverables.', zh: '作为项目负责人统筹调研、实验设计执行、数据分析与各阶段交付。' },
+      { en: 'Delivered an AI rating tool and scenario-specific design recommendations.', zh: '产出智能等级AI评估工具与分场景设计建议。' }
+    ]
+  },
+  {
+    org: { en: 'Hitachi China Research Laboratory', zh: '日立中国研究院' },
+    title: { en: 'Future Smart Healthy-Aging Model Exploration (Industry & Elderly User Research)', zh: '未来健康养老新模式探索研究（智慧养老产业与老年用户研究）' },
+    role: { en: 'Member', zh: '成员' },
+    period: { en: '2023.09 – 2024.06', zh: '2023.09 – 2024.06' },
+    bullets: [
+      { en: "Surveyed China's smart aging-care industry, policies, and domestic/international service models; mapped the industry ecosystem and proposed a 'digital home-based smart healthy-aging' model.", zh: '调研中国智慧养老产业现状、政策标准与国内外服务模式案例，构建养老产业链生态图谱，提出“数字化居家智慧健康养老”未来模式。' },
+      { en: 'Designed and ran attitude and technology-acceptance surveys, 24-hour behavioral tracking, and follow-up interviews with older adults.', zh: '设计并执行老年用户感知态度与科技接受度问卷、24小时行为深度追踪与事后访谈，完成老年人生活场景刻画与需求痛点分析。' },
+      { en: "Diagnosed interaction and UI issues of Hitachi's fNIRS brain-health device; ran validation and AI smart-home voice-interaction experiments with ~40 older adults.", zh: '诊断日立近红外脑健康设备的交互与UI问题并提出改进；组织实施改进验证实验与AI智慧家居语音交互实验，招募约40名55–65岁老年用户评估满意度、接受度与持续使用意愿。' },
+      { en: 'Co-organized an aging-care industry forum and authored the Phase-1 report.', zh: '协助组织养老产业论坛，撰写阶段一交付报告，为倡议书与后续标准发布提供数据支持。' }
     ]
   },
   {
@@ -440,6 +460,17 @@ const COLLABORATIONS = [
       { en: 'Benchmarked UI design guidelines, color, and motion systems across Android/iOS and competing brands; authored an industry report on UI motion trends.', zh: '对标调研安卓/iOS 等主流手机 UI 设计规范、色彩与动效体系，撰写 UI 动效行业发展报告。' },
       { en: 'Designed questionnaires based on prototype-library schemes, collected 500+ responses, and ran 64-participant experiments on motion curves and scenario fit.', zh: '基于原型库设计方案设计问卷，收集 500+ 份回复并完成 64 人次用户实验（动效曲线、场景匹配性等变量）。' },
       { en: 'Designed dozens of animation schemes and application scenarios, built a motion database, and led the team in proposal writing, reporting, and client presentations.', zh: '为荣耀设计数十种动效方案与适配场景，建立动效数据库，带领组员完成立项书、实验报告与汇报展示。' }
+    ]
+  },
+  {
+    org: { en: 'Audi', zh: '奥迪（Audi）' },
+    title: { en: 'Chinese Human Factors for Intercultural Automotive HMI Design', zh: '面向中国用户的汽车HMI跨文化人因设计研究' },
+    role: { en: 'Member', zh: '成员' },
+    period: { en: '2021.01 – 2021.09', zh: '2021.01 – 2021.09' },
+    bullets: [
+      { en: 'Built a Chinese human-factors "onion model" for automotive HMI and synthesized Sino-German cross-cultural differences into a design-principles framework.', zh: '构建面向中国用户的汽车HMI中国人因“洋葱模型”，系统梳理中德跨文化差异（价值观、沟通风格、情感体验、视觉扫描模式），形成设计原则框架。' },
+      { en: 'Conducted contextual inquiry across commuting, traffic-jam, and family-leisure scenarios with interviews, voice-agent simulation, and design-preference evaluation.', zh: '围绕通勤、堵车、家庭出行三大场景开展情境访谈、语音助手对话模拟与设计偏好测评，量化中国驾驶员需求优先级并区分新手与经验驾驶员差异。' },
+      { en: 'Delivered HMI recommendations covering feature priority, menu layout, interaction modes, and color preference; authored the report and presented findings.', zh: '产出覆盖功能优先级、菜单布局、交互方式与色彩偏好的HMI设计建议，完成研究报告与汇报展示。' }
     ]
   },
   {
