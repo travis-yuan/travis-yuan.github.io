@@ -412,7 +412,7 @@ const COLLABORATIONS = [
   {
     org: { en: 'Mercedes-Benz', zh: '梅赛德斯-奔驰' },
     title: { en: 'Multitasking In-Vehicle Intelligent UI Design and Evaluation', zh: '多任务车机智能UI设计与测试' },
-    role: { en: 'PI', zh: 'PI' },
+    role: { en: 'Member', zh: '成员' },
     period: { en: '2026.01 – present', zh: '2026.01 – 至今' },
     bullets: [
       { en: 'Designed intelligent in-vehicle UI solutions for multitasking scenarios under different driving conditions; in a lab vehicle mockup, participants drove in a Unity-based simulation system and evaluated the interfaces and driving tasks.', zh: '针对不同驾驶条件下的多任务场景设计车机智能UI方案；在实验室汽车实体模型中，组织被试于Unity模拟系统中完成驾驶，并对界面与驾驶任务进行评估。' }
