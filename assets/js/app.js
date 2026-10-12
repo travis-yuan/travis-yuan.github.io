@@ -524,6 +524,7 @@ const t = (key) => (I18N[currentLang][key] !== undefined ? I18N[currentLang][key
 /* ---------------- Renderers ---------------- */
 function renderPubs() {
   const root = document.getElementById('pubsRoot');
+  if (!root) return;
   const groupOrder = ['journal', 'conference', 'book', 'zh'];
   const groupKeys = {
     journal: 'pubGroupJournal',
@@ -630,6 +631,7 @@ function renderCollaborations() {
 }
 function renderNews() {
   const root = document.getElementById('newsRoot');
+  if (!root) return;
   const items = NEWS.slice().sort((a, b) => b.sort.localeCompare(a.sort));
   root.innerHTML = items.map((n) => `
     <div class="news-item">

@@ -143,8 +143,6 @@ a:hover { text-decoration: underline; }
   color: var(--text-soft); transition: all 0.15s ease;
 }
 .chip:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; transform: translateY(-1px); }
-.chip--primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-.chip--primary:hover { background: var(--accent-strong); color: #fff; }
 
 /* ---------------- Sections ---------------- */
 .section { padding: 56px 0; }
@@ -279,7 +277,6 @@ a:hover { text-decoration: underline; }
   padding: 28px 0; text-align: center; color: var(--muted); font-size: 0.86rem;
 }
 .site-footer p { margin: 2px 0; }
-.footer-sub { font-size: 0.8rem; }
 
 /* ---------------- Responsive ---------------- */
 @media (max-width: 860px) {
@@ -348,7 +345,6 @@ a:hover { text-decoration: underline; }
 .cm-swatch--locked { box-shadow: 0 0 0 2px var(--card), 0 0 0 3px var(--accent-strong); }
 .cm-note { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); line-height: 1.55; }
 .cm-note p { margin: 0 0 2px; }
-.cm-note .cm-note-sub { opacity: 0.82; }
 
 /* ============================================================
    FEATURE: beyond the lab (可整块注释/删除)
